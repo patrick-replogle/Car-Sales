@@ -8,6 +8,7 @@ import Total from "./components/Total";
 import { buyItem, removeFeature } from "./actions";
 
 const App = props => {
+  console.log(props);
   const removeFeature = item => {
     // dispatch an action here to remove an item
     return props.removeFeature(item);
