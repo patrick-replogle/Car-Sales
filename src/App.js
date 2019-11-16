@@ -5,14 +5,17 @@ import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
+import { buyItem, removeFeature } from "./actions";
 
 const App = props => {
   const removeFeature = item => {
     // dispatch an action here to remove an item
+    return props.removeFeature(item);
   };
 
   const buyItem = item => {
     // dipsatch an action here to add an item
+    return props.buyItem(item);
   };
 
   return (
@@ -37,4 +40,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, { buyItem, removeFeature })(App);
